@@ -1,10 +1,11 @@
-
+import java.util.ArrayList;
 public class Estudiante{
     private String Matricula;
     private String Nombre;
     private int Edad;
     private String Carrera;
     private String FechaDeInscripcio;
+    private ArrayList<Materia> ArregloMateriasEst;
 
     public Estudiante(){}
     public Estudiante(String mat, String nom, int edad, String carrera, String fecha){
@@ -13,6 +14,7 @@ public class Estudiante{
         setEdad(edad);
         setCarrera( carrera);
         setFechadDeInscripcio(fecha);
+        ArrayList<Materia> ArregloMateriasEst = new ArrayList<Materia>();
 
     }
     public String getMatricula(){return Matricula;}
@@ -20,6 +22,17 @@ public class Estudiante{
     public int getEdad(){return Edad;}
     public String getCarrera(){return Carrera;}
     public String getFechadDeInscripcio(){return FechaDeInscripcio;}
+    public void AgregarMateriaEst(Materia nueva){
+        ArregloMateriasEst.add(nueva);
+    }
+    public void ImprimirMateriasInscritas(){
+        for(Materia materias : ArregloMateriasEst){
+            System.out.println("Materia: "+ materias.getNombre());
+            System.out.println("Materia: "+ materias.getCodigo());
+            System.out.println("Materia: "+ materias.getCreditos());
+             System.out.println("------------------------------------------\n");
+        }
+    }
 
     public void SetNombre(String nom){Nombre = nom;}
     public void setMatricula(String mat){ Matricula = mat;}

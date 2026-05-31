@@ -1,8 +1,10 @@
 import java.util.Scanner;
 public class Main {
-    static void main(){Scanner leer = new Scanner(System.in);
+    public static void main(){Scanner leer = new Scanner(System.in);
         int op=0;
         ListaEstudiantes Lista = new ListaEstudiantes();
+        ListaProfesores ListaProfe = new ListaProfesores();
+        ListaMaterias ListaMat = new ListaMaterias();
         do{
         System.out.println("====================================");
         System.out.println("SISTEMA DE GESTIÓN ACADÉMICA");
@@ -23,21 +25,46 @@ public class Main {
 
         case 1:
             Lista.RegistrarEstudiante();
+            CLS(leer);
+            break;
+        case 2:
+            ListaProfe.RegistrarProfesor();
+            CLS(leer);
+            break;
+        case 3:
+            ListaMat.AgregarMateria();
+            CLS(leer);
             break;
         case 6:
             Lista.BuscarEstudiante();
+            CLS(leer);
             break;
         case 7:
             Lista.ListarEstudiantes();
+            CLS(leer);
+            break;
+        case 8:
+            ListaMat.ListarMaterias();
+            CLS(leer);
             break;
         case 10:
             System.out.println("Gracias por participar");
+            CLS(leer);
             break;
         }
 
         }while(op!= 10);
     }
     
+
+
+static void CLS(Scanner leer){
+    leer.nextLine();
+    leer.nextLine();
+    for (int i = 0; i < 10; i++) {
+       System.out.println("\n"); 
+    }
+}
 }
 
 
