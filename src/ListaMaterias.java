@@ -11,7 +11,7 @@ public class ListaMaterias{
         System.out.println("Ingrese el codigo de la materia");
         int cod = ValidarInt();
         System.out.println("Ingrese la cantidad de creditos de la materia");
-        int cre = ValidarInt();
+        int cre = ValidarCre();
         ArregloMaterias.add(new Materia(nom,cod,cre));
 
     }
@@ -42,6 +42,17 @@ public class ListaMaterias{
                 System.out.println("Error. Intentelo de nuevo");
             }
         }while(validar <0);
+        return validar;
+    }
+     public int ValidarCre(){
+        int validar;
+        do{
+            validar = leer.nextInt();
+            leer.nextLine();
+            if(validar < 0){
+                System.out.println("Error. Intentelo de nuevo");
+            }
+        }while(validar <0 || validar > 4);
         return validar;
     }
 }

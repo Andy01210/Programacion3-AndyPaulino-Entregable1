@@ -5,6 +5,7 @@ public class Main {
         ListaEstudiantes Lista = new ListaEstudiantes();
         ListaProfesores ListaProfe = new ListaProfesores();
         ListaMaterias ListaMat = new ListaMaterias();
+        ListaCalificaciones ListaCal = new ListaCalificaciones();
         do{
         System.out.println("====================================");
         System.out.println("SISTEMA DE GESTIÓN ACADÉMICA");
@@ -35,6 +36,15 @@ public class Main {
             ListaMat.AgregarMateria();
             CLS(leer);
             break;
+            case 4:
+                Lista.AgregarMateriaEst(ListaMat);
+                CLS(leer);
+                break;
+        case 5:
+            ListaCal.AgregarCalificacion(Lista, ListaMat);
+            CLS(leer);
+            break;
+
         case 6:
             Lista.BuscarEstudiante();
             CLS(leer);

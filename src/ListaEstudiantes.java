@@ -45,6 +45,43 @@ public class ListaEstudiantes {
         }
         System.out.println("Estudiante no encontrado");
     }
+
+     public void AgregarMateriaEst(ListaMaterias Materias){
+        int op = 0;
+        do{
+            System.out.println("1.Inscribir Estudiante");
+            System.out.println("2.salir");
+            op = leer.nextInt();
+            leer.nextLine();
+            switch(op){
+                case 1:
+                    System.out.println("Ingrese la matricula de el estudiante que desea inscribir en alguna materia");
+                    String EstudianteABuscar = validar();
+                    for(Estudiante Est : Arreglo){
+                        if(EstudianteABuscar.equalsIgnoreCase((Est.getMatricula()))){
+                            System.out.println("Estudiante encontrado");
+                            System.out.println("Ingrese el nombre de la materia que desea imprimir");
+                            String MateriaAgregar= validar();
+                            for(Materia materia : Materias.ArregloMaterias){
+                                if(MateriaAgregar.equalsIgnoreCase(materia.getNombre())){
+                                    System.out.println("MAteria encontrada y registrada exitosamente");
+                                    Est.AgregarMateriaEst(materia);
+                                    return;
+                                }
+                            }System.out.println("Materia no encontrada");
+                            return;
+                        }
+                    
+                    }System.out.println("Estudiante no encontrado. Registrelo");
+                    break;
+                case 2:
+                    System.out.println("Gracias por inscribir el estudiante");  
+                    break; 
+    }
+
+    }while(op != 2);
+}
+    
     public String validar(){
         String Validar;
         do { 
@@ -55,6 +92,6 @@ public class ListaEstudiantes {
         } while(Validar.isEmpty());
         return Validar;
     }
-
+     }
     
-}
+
