@@ -57,6 +57,10 @@ public class Main {
             ListaMat.ListarMaterias();
             CLS(leer);
             break;
+        case 9:
+            ListaCal.promedio(Lista, ListaCal);
+            CLS(leer);
+            break;
         case 10:
             System.out.println("Gracias por participar");
             CLS(leer);

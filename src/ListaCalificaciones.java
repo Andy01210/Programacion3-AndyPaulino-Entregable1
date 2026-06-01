@@ -76,6 +76,30 @@ public class ListaCalificaciones {
         }while(op!=3);
     }
 
+    public void promedio(ListaEstudiantes est, ListaCalificaciones cal){
+        int aprobados = 0;
+        int reprobados = 0;
+        for(Estudiante estudiante : est.Arreglo){
+            int contador = 0;
+            double calificacionTotal = 0;
+            double promedio;
+            for( Calificacion calificacion : cal.ArregloCalificaciones ){
+                if(estudiante.getMatricula().equalsIgnoreCase(calificacion.getEstudiante().getMatricula())){
+                    calificacionTotal += calificacion.getCalificacion();
+                    contador++;
+                }
+            }
+            promedio = calificacionTotal / contador;
+            if(promedio >= 2.00){aprobados ++;}
+            else{reprobados++;}
+            System.out.println(estudiante.getNombre() +":"+ promedio);
+
+        }
+        System.out.println("Estudiantes aprobador:"+ aprobados);
+        System.out.println("Estudiantes reprobados:"+ reprobados);
+    }
+    
+
 
         public void ImprimirCalificaciones(){
             for (Calificacion n : ArregloCalificaciones){
